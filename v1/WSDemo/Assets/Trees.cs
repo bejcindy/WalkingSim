@@ -2,24 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trees : MonoBehaviour
+public class Trees : Interactables
 {
-    public static WeatherThumbnail m_Instance;
     public List<Mesh> m_MeshArray;  // 6
 
     public int m_MinIndex, m_MaxIndex;
     public int m_CurrentMeshId = 0;
 
     public Animator m_Anim;
+    [SerializeField] private string m_AnimBool;
 
-    private void Awake()
-    {
-        m_Instance = this;
-    }
     private void Start()
     {
+        // tree
         base.item.rollableItem = true;
-        base.item.grabbable = true;
+        base.item.grabbable = false;
 
         m_Anim = GetComponent<Animator>();
     }
@@ -33,23 +30,23 @@ public class Trees : MonoBehaviour
         base.ItemRoll();
         m_CurrentMeshId = Random.Range(m_MinIndex, m_MaxIndex);
 
-        Debug.Log("Weather id: " + m_CurrentMeshId);
-        UIManager.m_Instance.m_Flowchart.SetIntegerVariable("WeatherId", m_CurrentMeshId);
+        Debug.Log("Tree id: " + m_CurrentMeshId);
+        UIManager.m_Instance.m_Flowchart.SetIntegerVariable("TreeId", m_CurrentMeshId);
 
         SetMesh(m_CurrentMeshId);
 
     }
 
-    IEnumerator SwitchWeather()
+    IEnumerator SwitchTree()
     {
-        m_Anim.SetBool("IsPress", true);
+        m_Anim.SetBool(m_AnimBool, true);
         float timer = 0;
         while (timer < 0.5f)
         {
             timer += Time.deltaTime;
             yield return null;
         }
-        m_Anim.SetBool("IsPress", false);
+        m_Anim.SetBool(m_AnimBool, false);
     }
     public void SetMesh(int id)
     {
@@ -57,7 +54,10 @@ public class Trees : MonoBehaviour
 
         Mesh mesh = GetComponent<MeshFilter>().sharedMesh;
         Mesh mesh2 = m_MeshArray[id];
-        StartCoroutine(SwitchWeather());
+        if (m_AnimBool != "")
+        {
+            StartCoroutine(SwitchTree());
+        }
         GetComponent<MeshFilter>().sharedMesh = mesh2;
 
     }

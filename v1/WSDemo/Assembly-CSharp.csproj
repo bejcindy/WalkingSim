@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\Interaction\PlayerInteraction.cs" />
     <Compile Include="Assets\3rdParty\First Person Drifter Controller\Scripts\Utils\CameraFade.cs" />
     <Compile Include="Assets\3rdParty\First Person Drifter Controller\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\WeatherController.cs" />
     <Compile Include="Assets\3rdParty\First Person Drifter Controller\Scripts\Optional\HeadBob.cs" />
     <Compile Include="Assets\Scripts\VFX\OutlineFeature.cs" />
     <Compile Include="Assets\Scripts\Interaction\PlayerInventory.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Interaction\Item.cs" />
     <Compile Include="Assets\Scripts\Interaction\Interactables.cs" />
+    <Compile Include="Assets\Trees.cs" />
     <Compile Include="Assets\Scripts\Audio\Sound.cs" />
     <Compile Include="Assets\Scripts\VFX\DepthNormalsFeature.cs" />
     <Compile Include="Assets\3rdParty\First Person Drifter Controller\Scripts\LockMouse.cs" />
@@ -81,11 +83,10 @@
     <Compile Include="Assets\Scripts\Interactables\DoorController.cs" />
     <Compile Include="Assets\3rdParty\First Person Drifter Controller\Scripts\FirstPersonDrifter.cs" />
     <Compile Include="Assets\Scripts\DiceController.cs" />
+    <Compile Include="Assets\BurstParticles.cs" />
     <Compile Include="Assets\Scripts\Interactables\ElevatorButton.cs" />
     <Compile Include="Assets\ElevatorDoorTrigger.cs" />
-    <Compile Include="Assets\WeatherController.cs" />
-    <Compile Include="Assets\Trees.cs" />
-    <Compile Include="Assets\BurstParticles.cs" />
+    <Compile Include="Assets\PlayerSpawn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\PolygonPrototype\Shaders\Prototype_Glass_Global.shader" />
