@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
 
-    private Animator doorAnimator;
+    public Animator doorAnimator;
     public bool locked;
     public bool doorOpened = false;
 

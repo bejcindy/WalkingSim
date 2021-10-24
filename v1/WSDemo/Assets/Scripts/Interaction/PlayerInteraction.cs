@@ -65,75 +65,55 @@ public class PlayerInteraction : MonoBehaviour
 
 		if (isViewing)
 		{
-			
-			ItemHighlight();
+			currentInteractable.GetComponent<MeshRenderer>().material = m_HighlightMat;
 
-			// Rotate item or not 
-			if(currentInteractable.item.grabbable && Input.GetMouseButton(0))
+			if (currentInteractable.item.grabbable && Input.GetMouseButton(0))
 			{
 				RotateObject();
 			}
 
-			if(canFinish && Input.GetMouseButtonDown(1))
+			if (canFinish && Input.GetMouseButtonDown(1))
 			{
 				FinishView();
 			}
 
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D))
-            {
-				if (currentInteractable.item.grabbable)
-				{
-					//UIManager.m_Instance.m_Flowchart.ExecuteBlock("DropWarning");
-					FinishView();
-				}
-				else
-				{
-					FinishView();
-				}
-			}
-
 			if (currentInteractable.item.rollableItem && Input.GetMouseButton(2))
-            {
+			{
 				// ROLL IT!!
 				RollItem();
 			}
-
 			return;
 		}
 
 		RaycastHit hit;
 		Vector3 rayOrigin = myCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.5f));
 
-		if(Physics.Raycast(rayOrigin, myCam.transform.forward, out hit, rayDistance))
+		if (Physics.Raycast(rayOrigin, myCam.transform.forward, out hit, rayDistance))
 		{
 			Interactables interactable = hit.collider.GetComponent<Interactables>();
-			if(interactable != null)
-			{				
+			if (interactable != null)
+			{
 				UIManager.m_Instance.SetHandCursor(true);
-
-				// Grab obj
 				if (Input.GetMouseButtonDown(0))
 				{
 					if (interactable.isMoving)
 					{
 						return;
 					}
-					
+
 					currentInteractable = interactable;
 					m_ItemOriginMat = currentInteractable.GetComponent<MeshRenderer>().material;
-					
-					// Envoke OnInteract
 					currentInteractable.OnInteract.Invoke();
 
-					if(currentInteractable.item != null)
+					if (currentInteractable.item != null)
 					{
-						Debug.Log("Start Viewing");
 						OnView.Invoke();
 
 						isViewing = true;
 
 						bool hasPreviousItem = false;
 
+						/*
 						for (int i = 0; i < currentInteractable.previousItem.Length; i++)
 						{
 							if (inventory.itens.Contains(currentInteractable.previousItem[i].requiredItem))
@@ -149,6 +129,7 @@ public class PlayerInteraction : MonoBehaviour
 						{
 							return;
 						}
+						*/
 
 						Interact(currentInteractable.item);
 
@@ -160,7 +141,7 @@ public class PlayerInteraction : MonoBehaviour
 						}
 					}
 
-					
+
 				}
 			}
 			else
@@ -172,7 +153,6 @@ public class PlayerInteraction : MonoBehaviour
 		{
 			UIManager.m_Instance.SetHandCursor(false);
 		}
-
 	}
 
 	void Interact(Item item)
@@ -208,6 +188,7 @@ public class PlayerInteraction : MonoBehaviour
 		}
 		else
 		{
+
 			UIManager.m_Instance.SetBackImage(true);
 		}
 		

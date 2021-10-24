@@ -11,6 +11,19 @@ public class PreviousItem
 	public UnityEvent OnInteract;
 }
 
+public enum RollType
+{
+	normal = 0,
+	special,
+}
+
+public enum ResultType
+{
+	Fail = 0,
+	Neutual,
+	Success,
+}
+
 public class Interactables : MonoBehaviour
 {
 	public Item item;
@@ -28,13 +41,53 @@ public class Interactables : MonoBehaviour
 	[Header("Fungus")]
 	[SerializeField] public string m_InteractBlockName;
 	[SerializeField] public string m_RolledBlockName;
-	[SerializeField] public string m_LeftItemName;
+	[SerializeField] public string m_LeftItemBlock;
+
+	[Header("ROLL")]
+	[SerializeField]
+	private int m_RollResult = 0;
+	//public float[] m_Possibilities = new float[3];
+
+	public int GetRollResult()
+    {
+		return m_RollResult;
+    }
+	float Choose(float[] probs)
+	{
+		//将事件元素加入到数组中，如上面有4个元素，分别为50,25,20,5
+		{
+			float total = 0;
+			for(int i = 0 ; i < probs.Length;i++)
+				total += probs[i];
+		}
+		//Random.value方法返回一个0—1的随机数
+		float randomPoint = Random.value;
+		for (int i = 0; i < probs.Length; i++)
+		{
+			if (randomPoint < probs[i])
+				return i;
+			else
+				randomPoint -= probs[i];
+		}
+		return probs.Length - 1;
+	}
 
 	// envoke when roll a <rollable> item
 	virtual public void ItemRoll()
 	{
+        if (item.m_RollType == RollType.normal)
+        {
+			// 3 possible results: FAIL, NEUTUAL, SUCCESS
+			// possibilities for example: 1/6, 4/6, 1/6
+		}
+		else if(item.m_RollType == RollType.special)
+        {
+			//
+        }
 
-		UIManager.m_Instance.m_Flowchart.ExecuteBlock(m_RolledBlockName);
+
+		if(m_RolledBlockName!="")
+			UIManager.m_Instance.m_Flowchart.ExecuteBlock(m_RolledBlockName);
 
 	}
 
