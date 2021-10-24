@@ -42,14 +42,15 @@ public class WeatherThumbnail : Interactables
 
     IEnumerator SwitchWeather()
     {
-        m_Anim.SetBool("IsPress", true);
-        float timer = 0;
-        while (timer < 0.5f)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
-        m_Anim.SetBool("IsPress", false);
+        //m_Anim.SetBool("IsPress", true);
+        //float timer = 0;
+        //while (timer < 0.5f)
+        //{
+        //    timer += Time.deltaTime;
+        //    yield return null;
+        //}
+        //m_Anim.SetBool("IsPress", false);
+        yield return null;
     }
     public void SetMesh(int id)
     {

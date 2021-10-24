@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeatherController : MonoBehaviour
 {
-    public Animator weatherAnimator;
+    [SerializeField] private Animator weatherAnimator;
     public bool weatherPopped = false;
     private void OnTriggerEnter(Collider other)
     {
@@ -26,6 +26,5 @@ public class WeatherController : MonoBehaviour
     }
     void Start()
     {
-        weatherAnimator = this.transform.parent.GetComponent<Animator>();
     }
 }

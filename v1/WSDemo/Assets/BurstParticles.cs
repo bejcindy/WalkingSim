@@ -7,6 +7,6 @@ public class BurstParticles : MonoBehaviour
     public ParticleSystem particles;
     public void Destroy()
     {
-        Instantiate(particles, transform.position, ,Quaternion.identity);
+        Instantiate(particles, transform.position, Quaternion.identity);
     }
 }
