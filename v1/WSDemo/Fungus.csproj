@@ -135,9 +135,9 @@
     <Compile Include="Assets\3rdParty\Fungus\Scripts\Commands\Collection\CollectionBaseVarAndIntCommand.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\CoreLib\BasicModule.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Execution\Scopes\IClosureBuilder.cs" />
-    <Compile Include="Assets\3rdParty\Fungus\Scripts\Commands\GetToggleState.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Scripts\VariableTypes\Collection\TransformCollection.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Scripts\Commands\LeanTween\BaseLeanTweenCommand.cs" />
+    <Compile Include="Assets\3rdParty\Fungus\Scripts\Commands\GetToggleState.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Scripts\VariableTypes\ControllerColliderHitVariable.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Thirdparty\FungusLua\Scripts\Utils\PODTypeFactory.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Thirdparty\FungusLua\Scripts\Interfaces\IStringSubstituter.cs" />

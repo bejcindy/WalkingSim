@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,7 +39,7 @@ public class Clock : Interactables
         }
         UIManager.m_Instance.m_Flowchart.SetIntegerVariable("TimeH", m_Hour);
         // 分支，多种可能
-        UIManager.m_Instance.m_Flowchart.ExecuteBlock(m_LeftItemName);
+        UIManager.m_Instance.m_Flowchart.ExecuteBlock(m_LeftItemBlock);
     }
 
     public override void ItemCollect()

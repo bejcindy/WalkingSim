@@ -13,7 +13,8 @@ public class Item : ScriptableObject
 	public string itemName;
 	public Sprite image;
 
-	public bool rollableItem;	// **important
+	public bool rollableItem;   // **important
+	public RollType m_RollType;
 
 	[Header("Inventory")]
 	public bool inventoryItem;
