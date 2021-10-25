@@ -1,6 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public class ReplaceMesh
+{
+	public Mesh mesh;
+	public float scale;
+
+}
 
 [CreateAssetMenu(fileName = "Item", menuName = "Item")]
 public class Item : ScriptableObject
@@ -21,7 +30,6 @@ public class Item : ScriptableObject
 	public string collectMessage;
 
 	[Header("Models")]
-	public List<Mesh> meshes;
-
+	public List<ReplaceMesh> meshes;
 
 }

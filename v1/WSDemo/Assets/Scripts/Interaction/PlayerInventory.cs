@@ -29,7 +29,7 @@ public class PlayerInventory : MonoBehaviour
 		itens.Add(item);
 	}
 
-	public void AddRequiredItens(Item item)
+	public void AddRequiredItems(Item item)
 	{
 		for (int i = 0; i < winCondition.Length; i++)
 		{
