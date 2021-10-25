@@ -208,7 +208,11 @@ public class PlayerInteraction : MonoBehaviour
 		if (currentItem.inventoryItem)
 		{
 			inventory.AddItem(currentItem);
-			//audioPlayer.PlayAudio(writingSound);
+            if (writingSound)
+            {
+				audioPlayer.PlayAudio(writingSound);
+			}
+			
 			currentInteractable.CollectItem.Invoke();
 		}
 		if (currentItem.grabbable)
@@ -219,7 +223,7 @@ public class PlayerInteraction : MonoBehaviour
 
 		if (currentItem.requiredItem)
 		{
-			inventory.AddRequiredItens(currentItem);
+			inventory.AddRequiredItems(currentItem);
 		}
 		
 		// reset Item Material

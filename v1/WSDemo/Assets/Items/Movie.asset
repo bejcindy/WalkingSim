@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58d5c46712c41d4b8f8806ac7565826, type: 3}
+  m_Name: Movie
+  m_EditorClassIdentifier: 
+  requiredItem: 0
+  grabbable: 0
+  audioClip: {fileID: 8300000, guid: c18ae2c530c264a6880266d5e0a71337, type: 3}
+  itemName: Movie
+  image: {fileID: 21300000, guid: 11c1465344d894bf0b62fe226620a7ab, type: 3}
+  rollableItem: 1
+  m_RollType: 0
+  inventoryItem: 0
+  collectMessage: 
+  meshes: []
