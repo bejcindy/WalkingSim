@@ -10,6 +10,7 @@ public class playercontroller : MonoBehaviour
     public int jumpForce = 400;
     private Vector2 rotation = Vector2.zero;
     float rotSpeed=5f; //mouse sensitivity
+
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
@@ -19,9 +20,9 @@ public class playercontroller : MonoBehaviour
     void Update()
     {
         transform.position = player.transform.position;
-        rotation.y += Input.GetAxis("Mouse X");
-        rotation.x += -Input.GetAxis("Mouse Y");
-        transform.eulerAngles = (Vector2)rotation * rotSpeed;
+        //rotation.y += Input.GetAxis("Mouse X");
+        //rotation.x += -Input.GetAxis("Mouse Y");
+        //transform.eulerAngles = (Vector2)rotation * rotSpeed;
 
 
         //Vector3 move = Input.GetAxis("Vertical") * transform.forward * speed;
