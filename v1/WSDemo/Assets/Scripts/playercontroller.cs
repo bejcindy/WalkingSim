@@ -5,19 +5,20 @@ using UnityEngine;
 public class playercontroller : MonoBehaviour
 {
     // Start is called before the first frame update
-    private Rigidbody rb;
+    public Transform player;
     public int speed = 5;
     public int jumpForce = 400;
     private Vector2 rotation = Vector2.zero;
-    public float rotSpeed; //mouse sensitivity
+    float rotSpeed=5f; //mouse sensitivity
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.position = player.transform.position;
         rotation.y += Input.GetAxis("Mouse X");
         rotation.x += -Input.GetAxis("Mouse Y");
         transform.eulerAngles = (Vector2)rotation * rotSpeed;
